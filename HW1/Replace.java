@@ -7,10 +7,13 @@ package HW1;
 // remember computer counting starts at 0:
 // HELLO
 // 01234
-public class Replace {
-    public String charReplace(String s, int x, char z) {
+public class Replace {      
+    public String charReplace(String sentence, int number, char ch) {
+        String newStr = sentence.substring(0, number) + sentence.substring(number + 1);
+        String newString = newStr.substring(0, number) + ch + newStr.substring(number);
+        System.out.println(newString); 
         return null;
-        
     }
-    
+ 
 }
+
