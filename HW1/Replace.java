@@ -10,9 +10,8 @@ package HW1;
 public class Replace {      
     public String charReplace(String sentence, int number, char ch) {
         String newStr = sentence.substring(0, number) + sentence.substring(number + 1);
-        String newString = newStr.substring(0, number) + ch + newStr.substring(number);
-        System.out.println(newString); 
-        return null;
+        String newString = newStr.substring(0, number) + ch + newStr.substring(number); 
+        return newString;
     }
  
 }

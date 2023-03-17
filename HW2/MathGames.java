@@ -11,10 +11,15 @@ public class MathGames {
     // Bonus points: Try to make it accept any 2 sides and return the 3rd. So it can take in
     // Hypotenuse and Perpendicular and return the base.
     // Example 1: pythagorean(3,4) would return 5
-
-
-
+    public static String calculateHypotenuse(double a, double b) {
+        double cSquared = Math.pow(a, 2) + Math.pow(b, 2); // calculate c^2 using a^2 + b^2
+        double c = Math.sqrt(cSquared); // calculate c by taking the square root of c^2
+        return "The hypotenuse of the right triangle with sides " + a + " and " + b + " is " + c;
+        
+    }
     
+
+
     // 2. Create a method that will calcuate my grade in the class. You can use the grade range as follows
         // A: 100 - 90
         // B:  89 - 80
@@ -27,9 +32,20 @@ public class MathGames {
         // Hint 2: You will probably need to cast the double to an int
         // Hint 3: You will probably need to use the Math.ceil() method
         // Example: grade(69.3) would return a D
-
-
-
+    public static String calculateGrade(double grade) {
+        int roundedGrade = (int) Math.ceil(grade); // Round up to nearest integer
+        if (roundedGrade >= 90) {
+            return "My letter grade is A.";
+        } else if (roundedGrade >= 80) {
+            return "My letter grade is B.";
+        } else if (roundedGrade >= 70) {
+            return "My letter grade is C.";
+        } else if (roundedGrade >= 60) {
+            return "My letter grade is D.";
+        } else {
+            return "My letter grade is F.";
+        }
+    }
 
 
 
@@ -42,12 +58,21 @@ public class MathGames {
     //      Hint 4: You will probably need to use the Math.ceil() method
     //      Example: tip(100, 4, 18) would return 5.0
 
-    
- 
+    public static String calculateTip(double totalBill, int numPeople, double tipPercentage) {
+        double tipPerPerson = Math.ceil(totalBill * (tipPercentage / 100) / numPeople);
+        return "The tip each person needs to give is $" + tipPerPerson;
+    }
+
 
 
     // You can either create a tester class or put your code here
      public static void main(String[] args){
-        
+        System.out.println("\n");
+        System.out.println(calculateHypotenuse(3.0, 4.0));
+        System.out.println("\n");
+        System.out.println(calculateGrade(69.3));
+        System.out.println("\n");
+        System.out.println(calculateTip(100.0, 4, 18.0));
+        System.out.println("\n");
     }
 }

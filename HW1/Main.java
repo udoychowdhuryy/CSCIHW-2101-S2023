@@ -11,13 +11,13 @@ public class Main {
         // Create an instance of the Adlibs class and call the story method (see Adlibs.java for more info)
         System.out.println("\n");
         Adlibs a = new Adlibs();
-        a.story("Udoy", 20, "burgundy");
+        System.out.println(a.story("John", 20, "blue"));
 
 
 
         // Create an instance of the Replace class and call the charReplace method (see Replace.java for more info)
         System.out.println("\n");
         Replace r = new Replace();
-        r.charReplace("I like tacos", 4, 'v'); 
+        System.out.println(r.charReplace("I like tacos", 4, 'v')); 
     }
 }

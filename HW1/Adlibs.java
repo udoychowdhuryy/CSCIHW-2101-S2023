@@ -10,6 +10,6 @@ package HW1;
 public class Adlibs {
 
     public String story(String name, int age, String favoriteColor) {
-        return "Hello! My name is " + name + ", and I am " + age + ", and my favorite color is " + favoriteColor + ".";
+        String adlibs_story = "Hello! My name is " + name + ", and I am " + age + ", and my favorite color is " + favoriteColor + ".";
+        return adlibs_story;}
     }
-}
