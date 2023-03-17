@@ -67,12 +67,8 @@ public class MathGames {
 
     // You can either create a tester class or put your code here
      public static void main(String[] args){
-        System.out.println("\n");
-        System.out.println(calculateHypotenuse(3.0, 4.0));
-        System.out.println("\n");
-        System.out.println(calculateGrade(69.3));
-        System.out.println("\n");
+        System.out.println(calculateHypotenuse(3.0, 4.0)+ "\n");
+        System.out.println(calculateGrade(69.3)+ "\n");
         System.out.println(calculateTip(100.0, 4, 18.0));
-        System.out.println("\n");
     }
 }
