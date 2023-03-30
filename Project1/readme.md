@@ -22,7 +22,7 @@
         else
     Hint 4: Method should look something like overDraft(BankAccount bank, double value)
 
-2. Create a method for transfer Money. The method should take in 2 bank account objects and an amount to transfer. You can assume the second account is gregChecking
+2. Create a method for transfer Money. The method should take in 2 bank account objects and an amount to transfer. You can assume the second account is Katara (or use the name of your choice)
     Hint 1. This will require you to take in 3 parameters at min
         Bank Account 1, Bank Account 2, Amount to transfer
     Hint 2. The math involved would be two folded.
@@ -43,7 +43,7 @@
 then ask the user for the variables they would like for instance the Principal and years
 but with fixed amounts for the apy. For the compount the APY is 0.0001
 and for the simple interest account it is 0.001.
-NOTE: The value of n im compounded must be 4 for quarterly
+NOTE: The value of n in compounded must be 4 for quarterly
 
 5. Incorporate the methods in the interactive prompt
     Add Options for transfering and Setting up a savings account Include error checking in logic (this is done for the most part you just need to add the methods to the prompt)
