@@ -15,19 +15,38 @@ public class Loops {
     //eeat -> true
     //eeeat -> true
     //eeeeat -> false
-
-    public static boolean loopE(String str){
-        return true; // <- this should be changed 
+    public static boolean loopE(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == 'e') {
+                count++;
+            }
+        }
+        boolean result;
+        if (count >= 1 && count <= 3) {
+            result = true;
+        } else {
+            result = false;
+        }
+        return result;
     }
+    
 
+    
     //Given a String str and int n return a larger string
     //that is n copies of the original string 
     //Ex.
     //stringTimes("Code",2) ->"CodeCode"
     //stringTimes("Code",4) ->"CodeCodeCodeCode"
     public static String stringTimes(String str, int n) {
-        return null; // <- this should be changed 
-    } 
+        String result = "";
+        for (int i = 0; i < n; i++) {
+            result += str;
+        }
+        return result;
+    }
+
+
 
     //Create a method Given a string, return the string where all of the "z"
     //Have been removed. Except do not remove a z at the start
@@ -36,10 +55,21 @@ public class Loops {
     //stringZ("zHelloz") -> "zHelloz"
     //stringZ("nozthaznks") -> "nothanks"
     //stringZ("xksiazdjaasldzsajzasdz") -> "xksiadjaasldsajasdz"
-    public static String stringZ(String str){
-        return null; // <- this should be changed 
+    public static String stringZ(String str) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(str.charAt(0)); // append first character
+        for (int i = 1; i < str.length() - 1; i++) {
+            char c = str.charAt(i);
+            if (c != 'z') {
+                sb.append(c);
+            }
+        }
+        sb.append(str.charAt(str.length() - 1)); // append last character
+        return sb.toString();
     }
+    
 
+    
     //Create a method that contains a while loop that allows for
     //The user to input numbers until the number 0 is entered. Each time a number is 
     //entered the total will be summed and then prompted for a second number. 
@@ -65,12 +95,38 @@ public class Loops {
     // The total so far is 27.
     // Number: 0
     // TOTAL ENDED --- The total is 27.
-    public static void sums(){
+    public static void sums() {
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0;
+        System.out.println("I will add up the numbers you give me....");
+        while (true) {
+            System.out.print("Number: ");
+            int num = scanner.nextInt();
+            if (num == 0) {
+                System.out.println("TOTAL ENDED --- The total is " + sum + ".");
+                break;
+            }
+            sum += num;
+            System.out.println("The total so far is " + sum + ".");
+        }
+        scanner.close();
     }
 
     public static void main(String[] args) {
-        // Add code to help test your methods here
+        // Part One
+        String etest = "eeeeat";
+        System.out.println(loopE(etest));
 
+        // Part Two
+        System.out.println(stringTimes("Code", 2));
+        System.out.println(stringTimes("Code", 4));
+
+        // Part Three
+        String result = stringZ("zHelzloz");
+        System.out.println(result); 
+
+        // Part Four
+        sums();
     }
     
 }
