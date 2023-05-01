@@ -46,7 +46,7 @@ public class Medals {
     public static void main(String[] args) {
         final int COUNTRIES = 7;
         final int MEDALS = 3;
-
+    
         String[] countries = {
             "Canada",
             "China",
@@ -56,7 +56,7 @@ public class Medals {
             "Russia",
             "United States"
         };
-
+    
         int[][] counts = 
         { 
             { 1, 0, 1 },
@@ -68,7 +68,35 @@ public class Medals {
             { 1, 1, 0 }
         };
         System.out.println("        Country    Gold    Silver    Bronze   Total");
-
+    
+    
+        // Print countries, counts, and row totals (IE total medals by country)
+        int[] rowTotals = new int[COUNTRIES];
+        for (int i = 0; i < COUNTRIES; i++) {
+            int total = 0;
+            System.out.printf("%15s", countries[i]);
+            for (int j = 0; j < MEDALS; j++) {
+                System.out.printf("%8d", counts[i][j]);
+                total += counts[i][j];
+                rowTotals[i] = total;
+            }
+            System.out.printf("%8d\n", total);
+        }
+    
+        // Print medal totals
+        ArrayList<Integer> medalCounts = new ArrayList<Integer>();
+        for (int j = 0; j < MEDALS; j++) {
+            int sum = 0;
+            for (int i = 0; i < COUNTRIES; i++) {
+                sum += counts[i][j];
+            }
+            medalCounts.add(sum);
+        }
+        System.out.printf("%15s%8s%8s%8s%8s\n", "Total", "Gold", "Silver", "Bronze", "X");
+        System.out.printf("%15s%8d%8d%8d\n", "", medalCounts.get(0), medalCounts.get(1), medalCounts.get(2));
+    }
+    
+}
 
         // TODO
         // Print countries, counts, and row totals (IE total medals by country)
@@ -99,9 +127,6 @@ public class Medals {
         // Gold    Silver    Bronze
         // 4       4         5
      
-    }
-    
-}
 
 
 
